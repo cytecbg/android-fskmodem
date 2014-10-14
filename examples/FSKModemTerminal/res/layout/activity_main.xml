@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    tools:context="bg.cytec.android.fskmodem.examples.terminal.MainActivity" >
+
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+	    android:layout_above="@+id/input" 
+	    android:id="@+id/scrollview" >
+	    	    
+        <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/terminal"
+	        android:text="@null" />
+        
+    </ScrollView>
+    
+    <EditText 
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:id="@id/input"
+        android:hint="@string/input"
+        android:maxLines="1"
+        android:maxLength="127"
+        android:imeOptions="actionSend"
+        android:inputType="textUri|text" />
+    
+</RelativeLayout>
