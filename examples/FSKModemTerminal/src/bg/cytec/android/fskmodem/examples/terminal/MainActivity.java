@@ -41,6 +41,7 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+import android.annotation.SuppressLint;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioRecord;
@@ -123,6 +124,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		mScroll.setOnTouchListener(new OnTouchListener() {
 			
+			@SuppressLint("ClickableViewAccessibility")
 			@Override
 			public boolean onTouch(View view, MotionEvent event) {
 				
@@ -186,7 +188,7 @@ public class MainActivity extends ActionBarActivity {
 					
 					mAudioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
 							mConfig.sampleRate, AudioFormat.CHANNEL_OUT_MONO,
-							AudioFormat.ENCODING_PCM_16BIT, pcm16.length/2,
+							AudioFormat.ENCODING_PCM_16BIT, pcm16.length*2,
 							AudioTrack.MODE_STATIC);
 					
 					mAudioTrack.write(pcm16, 0, pcm16.length);
